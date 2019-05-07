@@ -46,3 +46,30 @@ Implementation of Logistic Regression mainly requires 3 different equations. The
 
 
 
+The hypothesis equation is represented as:
+
+$$ \hat{y} = \sigma (a*x + b)$$
+
+The cost function is represented as:
+
+$$ J(a,b) = -\frac{1}{m}\sum_0^m[y*ln(\hat{y}) + (1-y)*ln(1-\hat{y})]$$
+
+The partial derivative of the cost function with respect to the cost function gives us the gradient descent along the a axis and b axis. These equations become
+
+$$ \frac{\delta J(a,b)}{\delta a} = -\frac{1}{m} [\hat{y} - y]*x$$
+
+$$ \frac{\delta J(a,b)}{\delta b} = -\frac{1}{m} [\hat{y} - y]$$
+
+The values of the weights i.e. **a** and the bias **b** are varied using these gradient values. 
+
+$$ a = a - \alpha[\frac{\delta J(a,b)}{\delta a}] $$
+
+$$ b = b - \alpha[\frac{\delta J(a,b)}{\delta b}] $$
+
+
+
+Usually, the value **a** are called as the **weights of the neural network** and the value **b** is called as the **bias in the neural network**.
+
+Neural networks mainly work on the basis of varying the values of the weights and the bias. 
+
+This is the general overview of Neural Networks.
