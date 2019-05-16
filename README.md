@@ -1,4 +1,4 @@
-# Deep Learning Specialization by (deeplearning.ai)[deeplearning.ai]
+# Deep Learning Specialization by [deeplearning.ai](deeplearning.ai)
 
 The complete specialization takes around 3 months to complete. I'm looking forward to complete this complete specialization in 3 weeks. 
 
