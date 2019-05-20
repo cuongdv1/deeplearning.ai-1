@@ -73,3 +73,10 @@ Usually, the value **a** are called as the **weights of the neural network** and
 Neural networks mainly work on the basis of varying the values of the weights and the bias. 
 
 This is the general overview of Neural Networks.
+
+
+
+# Vectorization
+
+Vectorization is basically the art of getting rid of explicit loops in a program. This helps in reducing the amount of time taken to do some mathematical operations. 
+As we saw in the code, the time taken to perform a simple mathematical operation using for loop and the the dot product has a huge difference. 
