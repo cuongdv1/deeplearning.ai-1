@@ -80,3 +80,68 @@ This is the general overview of Neural Networks.
 
 Vectorization is basically the art of getting rid of explicit loops in a program. This helps in reducing the amount of time taken to do some mathematical operations. 
 As we saw in the code, the time taken to perform a simple mathematical operation using for loop and the the dot product has a huge difference. 
+
+
+
+The rule of thumb in Vectorization is:
+
+- Whenever possible, avoid explicit for-loops
+
+
+
+# Vectorization of Logistic Regression Equations
+
+As we saw earlier, the Hypothesis equation was given as,  $$ \hat{y} = \sigma (a*x + b)$$ where, the term inside the sigmoid function can be defined as, $ z = a*x + b$ 
+
+If we consider a dataset, we'd have to consider multiple explicit for loops to get the required outputs. But here, we'll use vectorization methods to implement the equation for $z$ instead of using explicit for loops.
+
+Thus, the vectorized equation becomes, 
+
+$ Z = [ z_1,z_2,z_3.....,z_m  ]  = w^T. X + B$
+
+where $B$ is: $ B = [b_1,b_2,b_3,b_4,.......,b_m]$
+
+This can be implemented using NumPy as:
+
+```python
+Z = np.dot(w.T,X) + b
+```
+
+Here even though the value of b, is only one value, python NumPy converts it into a $1*m$ matrix. This process is called **Broadcasting** in Python. 
+
+Hence, the equation of $\hat{y}$ becomes, 
+
+$ \hat{y} = \sigma(Z) $
+
+This completes the Vectorization of Hypothesis Equation. 
+
+Now, lets vectorize the Gradient Descent Equation.
+
+The change in the value of Z which is denoted as $ \delta z$ can be calculated using:
+
+$ \delta z = \hat{y} - Y $
+
+where $ Y $ is the actual output matrix.
+
+Thus, we can calculate the changes in the weights and changes in the bias as:
+
+$ \delta w = \frac{1}{m} [X. \delta z^T] $
+
+$ \delta b = \frac{1}{m}*np.sum(\delta z) $
+
+and the values of $w$ and $b$ can be calculated as:
+
+$ w := w - \alpha *\delta w$
+
+$ b := b - \alpha * \delta b $
+
+Here $\alpha$ is the learning rate.
+
+
+
+This completes the gradient descent in logistic regression. One interesting thing here that we'd have to note is that, here, we computed one iteration without using any explicit for loops. But if we have to perform multiple iterations, then we'd have to use a for loop which gives us the number of iterations.
+
+
+
+# Broadcasting in Python
+
