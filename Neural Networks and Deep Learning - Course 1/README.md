@@ -145,3 +145,15 @@ This completes the gradient descent in logistic regression. One interesting thin
 
 # Broadcasting in Python
 
+If we are performing some mathematical operation with matrices which don't have the same order, this method, broadcasting takes care of the order of the matrices to ease the performance of the mathematical operation. For example, if we want to add a column matrix with an integer value, the broadcasting method helps us here. If I want to perform the calculation as shown below, 
+
+$\begin{bmatrix}1 \\ 2 \\3 \end{bmatrix} + 100  \ broadcasting \ converts \ this \ into $ 
+
+$\begin{bmatrix}1 \\ 2 \\3 \end{bmatrix} + \begin{bmatrix} 100 \\ 100\\ 100\end{bmatrix} resulting \ in \begin{bmatrix} 101\\102\\103\end{bmatrix} $
+
+Any kind of operation we perform, this is the kind of output we'd get. 
+
+To generalize,
+
+A matrix with the shape of m x n with some number whose shape is different, gets converted into an m x n matrix to perform the operation. 
+
