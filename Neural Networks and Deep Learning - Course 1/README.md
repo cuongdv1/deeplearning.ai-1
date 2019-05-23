@@ -48,7 +48,7 @@ Implementation of Logistic Regression mainly requires 3 different equations. The
 
 The hypothesis equation is represented as:
 
-$$ \hat{y} = \sigma (a*x + b)$$
+$` \hat{y} = \sigma (a*x + b) `$
 
 The cost function is represented as:
 
