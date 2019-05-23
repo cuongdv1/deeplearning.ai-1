@@ -91,15 +91,15 @@ The rule of thumb in Vectorization is:
 
 # Vectorization of Logistic Regression Equations
 
-As we saw earlier, the Hypothesis equation was given as,  $$ \hat{y} = \sigma (a*x + b)$$ where, the term inside the sigmoid function can be defined as, $ z = a*x + b$ 
+As we saw earlier, the Hypothesis equation was given as,  $$ \hat{y} = \sigma (a*x + b)$$ where, the term inside the sigmoid function can be defined as, $$ z = a*x + b $$ 
 
 If we consider a dataset, we'd have to consider multiple explicit for loops to get the required outputs. But here, we'll use vectorization methods to implement the equation for $z$ instead of using explicit for loops.
 
 Thus, the vectorized equation becomes, 
 
-$ Z = [ z_1,z_2,z_3.....,z_m  ]  = w^T. X + B$
+$$ Z = [ z_1,z_2,z_3.....,z_m  ]  = w^T. X + B $$
 
-where $B$ is: $ B = [b_1,b_2,b_3,b_4,.......,b_m]$
+where $$B$$ is: $$ B = [b_1,b_2,b_3,b_4,.......,b_m] $$
 
 This can be implemented using NumPy as:
 
@@ -111,7 +111,7 @@ Here even though the value of b, is only one value, python NumPy converts it int
 
 Hence, the equation of $\hat{y}$ becomes, 
 
-$ \hat{y} = \sigma(Z) $
+$$ \hat{y} = \sigma(Z) $$
 
 This completes the Vectorization of Hypothesis Equation. 
 
@@ -119,23 +119,23 @@ Now, lets vectorize the Gradient Descent Equation.
 
 The change in the value of Z which is denoted as $ \delta z$ can be calculated using:
 
-$ \delta z = \hat{y} - Y $
+$$ \delta z = \hat{y} - Y $$
 
 where $ Y $ is the actual output matrix.
 
 Thus, we can calculate the changes in the weights and changes in the bias as:
 
-$ \delta w = \frac{1}{m} [X. \delta z^T] $
+$$ \delta w = \frac{1}{m} [X. \delta z^T] $$
 
-$ \delta b = \frac{1}{m}*np.sum(\delta z) $
+$$ \delta b = \frac{1}{m}*np.sum(\delta z) $$
 
 and the values of $w$ and $b$ can be calculated as:
 
-$ w := w - \alpha *\delta w$
+$$ w := w - \alpha *\delta w $$
 
-$ b := b - \alpha * \delta b $
+$$ b := b - \alpha * \delta b $$
 
-Here $\alpha$ is the learning rate.
+Here $$\alpha$$ is the learning rate.
 
 
 
@@ -147,9 +147,9 @@ This completes the gradient descent in logistic regression. One interesting thin
 
 If we are performing some mathematical operation with matrices which don't have the same order, this method, broadcasting takes care of the order of the matrices to ease the performance of the mathematical operation. For example, if we want to add a column matrix with an integer value, the broadcasting method helps us here. If I want to perform the calculation as shown below, 
 
-$\begin{bmatrix}1 \\ 2 \\3 \end{bmatrix} + 100  \ broadcasting \ converts \ this \ into $ 
+$$ \begin{bmatrix}1 \\ 2 \\3 \end{bmatrix} + 100  \ broadcasting \ converts \ this \ into $$ 
 
-$\begin{bmatrix}1 \\ 2 \\3 \end{bmatrix} + \begin{bmatrix} 100 \\ 100\\ 100\end{bmatrix} resulting \ in \begin{bmatrix} 101\\102\\103\end{bmatrix} $
+$$ \begin{bmatrix}1 \\ 2 \\3 \end{bmatrix} + \begin{bmatrix} 100 \\ 100\\ 100\end{bmatrix} resulting \ in \begin{bmatrix} 101\\102\\103\end{bmatrix} $$
 
 Any kind of operation we perform, this is the kind of output we'd get. 
 
